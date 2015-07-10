@@ -18,8 +18,10 @@ function decreaseTimeBy1Second() {
 // shows on the screen and when it reaches 0 for photo 01 to hide and results 1 to show
 function decreasePhotoTimer() {
   if (photoStartTime === 0) {
-    $("#photo1").hide();
-    $("#qNa-results1").show();
+//TODO need to start timer and find a way to reset it.
+    // hideQNAShowMemoPhoto();
+    // $("#photo1").hide();
+    // $("#qNa-results1").show();
     // $("#results1").append("What Color Was The Bottle?");
   } else {
     photoStartTime = photoStartTime - 1;
@@ -35,7 +37,7 @@ var photoStartTime = 4;
 $(function() {
   $(".start-trigger").on("click", function() {
     $("#photo-timer").text(photoStartTime);
-
+console.log("timer starter");
     //this method runs my function at 1 second intervals
     setInterval(decreaseTimeBy1Second, 1000);
     setInterval(decreasePhotoTimer, 1000);

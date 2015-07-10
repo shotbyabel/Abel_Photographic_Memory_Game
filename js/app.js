@@ -15,7 +15,7 @@ var quizPhotos = [
     question:   "What color was the bottle?",
     a: "white",
     b: "dark",
-    answer: "a"
+    answer: "b"
   },
   {
     memoPhoto:  "../img/Photo02.jpg",
@@ -78,7 +78,10 @@ var hideQNAShowMemoPhoto = function(){
 /* UPDATE QNA PHOTO FUNCTIONS */
 
 var hideMemoPhotoShowQNA = function() {
+
   $(".memo-photo-template").hide();
+
+if(currentQuizPhoto < 5) {
   $(".qna-photo-template").show();
   // 1. update question
   $("#question").text(quizPhotos[currentQuizPhoto].question);
@@ -88,15 +91,34 @@ var hideMemoPhotoShowQNA = function() {
   $("#b").text(quizPhotos[currentQuizPhoto].b);
   // 4. reset "answer"
   $("#answer").text("?");
+}else {
+    showScore();
+
+  }
+};
+
+var showScore = function(){
+  $(".final-score-template").show()
+
 };
 
 
 // this is what happens when I click on an answer choice
 var clickOnChoice = function () {
+
   if (isRight(currentQuizPhoto, this.id)) {
-    $("#answer").text("Correct! (Click for next photo)");
+    if (currentQuizPhoto === 4 ){
+       $("#answer").text("Right On! (See your score!)");
+    }else{
+        $("#answer").text("Right On! (see next photo)");
+      }
+   
   } else {
-    $("#answer").text("Wrong! (Click for next photo)");
+    if(currentQuizPhoto === 4){
+      $("#answer").text("NO! (See your score!)"); 
+    } else{
+    $("#answer").text("NO! (see next photo)");
+    }
   }
 }
 
@@ -115,6 +137,8 @@ $(function() {
   // on clicking the answer, we:
   //  1. update the memo photo class
   //  2. switch back to memo photo
+  
+
   $("#answer").on("click", hideQNAShowMemoPhoto);
 
   //when i click on last photo's 'answer'
