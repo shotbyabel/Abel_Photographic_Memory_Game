@@ -69,16 +69,17 @@ var hideTitleShowMemoPhoto = function() {
 var hideQNAShowMemoPhoto = function(){
   
   $(".qna-photo-template").hide();
-  //added
-  // if (currentQuizPhoto < 5) {}
+  //added if and else statement for showScore//
+  if (currentQuizPhoto < 4) { 
   $(".memo-photo-template").show();
-  // add the correct image class for the current quiz photo
-  
+  // add the correct image class for the current quiz photo 
   $(".memo-photo-template").removeClass("photo" + currentQuizPhoto);
-  currentQuizPhoto = currentQuizPhoto + 1;
-  
+  currentQuizPhoto = currentQuizPhoto + 1; 
   $(".memo-photo-template").addClass("photo" + currentQuizPhoto);
   //add if else statement here for 'showScore'
+  } else{
+    showScore();
+  }
 
 };
 
@@ -146,8 +147,6 @@ $(function() {
   // on clicking the answer, we:
   //  1. update the memo photo class
   //  2. switch back to memo photo
-  
-
   $("#answer").on("click", hideQNAShowMemoPhoto);
 
   //when i click on last photo's 'answer'
