@@ -44,10 +44,10 @@ var quizPhotos = [
   {
     memoPhoto:  "../img/Photo05.jpg",
     qNaResults: "../img/Results.jpg",
-    question:   "what did the street sign read?",
-    a: "a speed limit",
-    b: "there was no street sign",
-    answer: "a"
+    question:   "who was sleeping on the ground?",
+    a: " some dogs",
+    b: "some dudes",
+    answer: "b"
   }
 ];
 

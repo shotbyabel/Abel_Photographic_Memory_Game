@@ -42,12 +42,37 @@ body {
 }
 
 #score-display{
+  color: black;
   font-size: 3.50em;
   position: absolute;
   top: 50px;
   width: 600px;
-  left: 50%;
+  left: 15%;
   margin-left: -300px; 
+  text-shadow: 3px 2px 3px white;
+}
+
+#your-score {
+  color:black;
+  font-size: 3.0em;
+  position: absolute;
+  top: 140px;
+  width: 600px;
+  left: 20px;
+   text-shadow: 3px 2px 3px white;
+  /*margin-left: 300px;*/
+
+}
+
+#player2-begin{
+  color: black;
+  font-size: 2.75em;
+  position: absolute;
+  top: 250px;
+  width: 600px;
+  left: 30%;
+  margin-left: -300px; 
+   text-shadow: 3px 2px 3px white;
 }
 
 /* ALL PAGES SHARE THE SAME HERO IMAGE STRUCTURE */
