@@ -67,20 +67,28 @@ var hideTitleShowMemoPhoto = function() {
 /* UPDATE MEMO PHOTO FUNCTIONS */
 
 var hideQNAShowMemoPhoto = function(){
+  
   $(".qna-photo-template").hide();
+  //added
+  // if (currentQuizPhoto < 5) {}
   $(".memo-photo-template").show();
   // add the correct image class for the current quiz photo
+  
   $(".memo-photo-template").removeClass("photo" + currentQuizPhoto);
   currentQuizPhoto = currentQuizPhoto + 1;
+  
   $(".memo-photo-template").addClass("photo" + currentQuizPhoto);
+  //add if else statement here for 'showScore'
+
 };
+
 
 /* UPDATE QNA PHOTO FUNCTIONS */
 
 var hideMemoPhotoShowQNA = function() {
 
   $(".memo-photo-template").hide();
-
+// ADDED IF ELSE FOR FINAL SCORE PHOTO
 if(currentQuizPhoto < 5) {
   $(".qna-photo-template").show();
   // 1. update question
@@ -102,7 +110,7 @@ var showScore = function(){
 
 };
 
-
+//TODO: I NEED TO HAVE FINAL PHOTO SHOW AFTER CLICKING ON SEE YOUR SCORE
 // this is what happens when I click on an answer choice
 var clickOnChoice = function () {
 
@@ -127,10 +135,11 @@ $(function() {
   $(".start-trigger").on("click", hideTitleShowMemoPhoto);
 
   // when i click on a memo photo i go to a qna photo
+  //TODO: once setInterval is set delete this cancel this.
   $(".memo-photo-template").on("click", function() {
     hideMemoPhotoShowQNA();
   });
-
+  //TODO: 
   // when i click on a choice...
   $(".choice").on("click", clickOnChoice);
 
