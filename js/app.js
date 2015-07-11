@@ -52,8 +52,8 @@ var quizPhotos = [
 ];
 
 // check if answer is right or wrong
-var isRight = function(photoNumber, answer) {
-  return answer === quizPhotos[photoNumber].answer;
+var isRight = function(photoNumber, playerAnswer) {
+  return playerAnswer === quizPhotos[photoNumber].answer;
 };
 
 
@@ -107,8 +107,8 @@ if(currentQuizPhoto < 5) {
 };
 
 var showScore = function(){
-  $(".final-score-template").show()
-
+  $(".final-score-template").show();
+  $("#your-score").text(score);
 };
 
 //TODO: I NEED TO HAVE FINAL PHOTO SHOW AFTER CLICKING ON SEE YOUR SCORE
@@ -118,18 +118,27 @@ var clickOnChoice = function () {
   if (isRight(currentQuizPhoto, this.id)) {
     if (currentQuizPhoto === 4 ){
        $("#answer").text("Right On! (See your score!)");
+        $("#answer").on('click', showScore);
+       score = score + 1;
     }else{
         $("#answer").text("Right On! (see next photo)");
+       score = score + 1;
       }
    
   } else {
     if(currentQuizPhoto === 4){
-      $("#answer").text("NO! (See your score!)"); 
+      $("#answer").text("NO! (See your score!)");
+      $("#answer").on('click', showScore);
     } else{
     $("#answer").text("NO! (see next photo)");
     }
   }
 }
+
+//ADDING NEW FUNCTION THAT ADDS SCORE
+// var keepScore = function(score) {
+//   return score += 1;
+// }
 
 $(function() {
   // when i click on "start game"

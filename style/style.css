@@ -134,6 +134,18 @@ body {
   left: 20px;
 }
 
+a.start-trigger {
+  cursor: pointer;
+}
+
+.choice {
+  cursor: pointer;
+}
+
+#answer {
+  cursor: pointer;
+}
+
 /*#page-header {
     background: black;
     color: white;
