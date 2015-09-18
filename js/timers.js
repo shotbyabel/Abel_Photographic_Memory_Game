@@ -1,7 +1,7 @@
 console.log("timers loaded.");
 
 // Storing the starting time in seconds into startTime variable.
-var startTime = 60;
+var starTime = 60;
 $("#game-timer").text(startTime);
 
 // Function that decreases the timer by 1 second.

@@ -111,6 +111,13 @@ var showScore = function(){
   $("#your-score").text(score);
 };
 
+
+//TODO RESTART GAME BY CLICKING the #PLayer-2-be
+// var RestartGame = function(){
+//   $("#player2-begin").on("click")
+
+// };
+
 //TODO: I NEED TO HAVE FINAL PHOTO SHOW AFTER CLICKING ON SEE YOUR SCORE
 // this is what happens when I click on an answer choice
 var clickOnChoice = function () {
